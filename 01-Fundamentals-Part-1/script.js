@@ -27,3 +27,9 @@ console.log(ageElnaz >= 40);
 
 const inFullAge = ageElnaz >= 45;
 console.log(inFullAge / 2, inFullAge);
+
+let x, y;
+x = y = 25 - 10;
+console.log(x, y);
+const averageAge = (ageMahdi - ageElnaz) / 2;
+console.log(averageAge);
