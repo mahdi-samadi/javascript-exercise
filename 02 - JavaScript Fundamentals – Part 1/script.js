@@ -33,3 +33,13 @@
 // console.log(x, y);
 // const averageAge = (ageMahdi - ageElnaz) / 2;
 // console.log(averageAge);
+
+//  TODO part 2 session 17
+const favorites = prompt(`what's your favorites number?`);
+console.log(favorites);
+console.log(typeof favorites);
+if (favorites == 7) {
+  console.log("das khush ajab shomarei");
+}else {
+  console.log("namana???")
+}
