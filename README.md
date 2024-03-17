@@ -1,2 +1,2 @@
-# javascript-projects
+# javascript-exercises
 HTML CSS JS
