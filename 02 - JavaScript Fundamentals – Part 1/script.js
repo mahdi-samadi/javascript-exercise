@@ -35,11 +35,50 @@
 // console.log(averageAge);
 
 //  TODO part 2 session 17
-const favorites = prompt(`what's your favorites number?`);
-console.log(favorites);
-console.log(typeof favorites);
-if (favorites == 7) {
-  console.log("das khush ajab shomarei");
-}else {
-  console.log("namana???")
-}
+// const favorites = prompt(`what's your favorites number?`);
+// console.log(favorites);
+// console.log(typeof favorites);
+// if (favorites == 7) {
+//   console.log("das khush ajab shomarei");
+// }else {
+//   console.log("namana???")
+// }
+
+//season 3 episode 3
+// function fruitProcessor(apples, oranges) {
+//   const juice = `Juice with ${apples} apples and ${oranges} oranges. `;
+//   return juice;
+// }
+// const appleJuice = fruitProcessor(2, 0);
+// console.log(appleJuice);
+
+// const appleOrangeJuice = fruitProcessor(2, 5);
+// console.log(appleOrangeJuice);
+
+//season 3 episode 4
+//function declaration :
+// const age1 = calcAge1(1995);
+// function calcAge1(birthYear) {
+//   return 2024 - birthYear;
+// }
+
+// function expression
+// const age2 = calcAge2(1995);  // nemitonim to in model qabl az tabe ono seda bznim !!!!!
+// const calcAge2 = function (birthYear) {
+//   return 2024 - birthYear;
+// };
+
+// console.log(age1, age2);
+
+// arrow function
+// const calcAge3 = (birthYear) => 2024 - birthYear;
+// const age3 = calcAge3(1995);
+// console.log(age3);
+
+// const yearsUntilRetirement = (birthYear, firstname) => {
+//   const age = 2024 - birthYear;
+//   const retirement = 39 - age;
+//   return `${firstname} retires in ${retirement} years`;
+// };
+
+// console.log(yearsUntilRetirement(1995, "mahdi"));
