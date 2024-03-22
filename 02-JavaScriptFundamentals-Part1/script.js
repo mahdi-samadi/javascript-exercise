@@ -80,5 +80,13 @@
 //   const retirement = 39 - age;
 //   return `${firstname} retires in ${retirement} years`;
 // };
-
 // console.log(yearsUntilRetirement(1995, "mahdi"));
+
+// const family = ["mahdi", "elnaz", "azam", "siyamak"];
+
+// for (let i = 0; i <= 7; i++) {
+//   console.log(family[i]);
+// }
+
+const dice = Math.trunc(Math.random() * 6 + 1);
+console.log(dice);
