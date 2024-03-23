@@ -88,5 +88,43 @@
 //   console.log(family[i]);
 // }
 
-const dice = Math.trunc(Math.random() * 6 + 1);
-console.log(dice);
+// const dice = Math.trunc(Math.random() * 6 + 1);
+// console.log(dice);
+
+// const temperetures = [3, -2, -5, 'error', 2, 6, 165];
+
+// const calcTempAmplitude = function (temps) {
+//   let max = temps[0];
+//   let min = temps[0];
+//   for (let i = 0; i < temps.length; i++) {
+//     const curTemp = temps[i];
+
+//     if (typeof curTemp !== 'number') continue;
+//     if (temps[i] > max) max = temps[i];
+//     if (temps[i] < min) min = temps[i];
+//   }
+//   console.log(max, min);
+//   return max - min;
+// };
+
+// const amplitude = calcTempAmplitude(temperetures);
+// console.log(amplitude);
+
+// const calcTempAmplitudeNEW = function (t1, t2) {
+//   const temps = t1.concat(t2);
+//   console.log(temps);
+
+//   let max = temps[0];
+//   let min = temps[0];
+//   for (let i = 0; i < temps.length; i++) {
+//     const curTemp = temps[i];
+//     if (typeof curTemp !== 'number') continue;
+//     if (temps[i] > max) max = temps[i];
+//     if (temps[i] < min) min = temps[i];
+//   }
+//   console.log(max, min);
+//   return max - min;
+// };
+
+// const amplitudeNEW = calcTempAmplitudeNEW([1, 3, 99], [-1, 3, 66, 88 + 11]);
+// console.log(amplitudeNEW);
