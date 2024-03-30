@@ -128,3 +128,75 @@
 
 // const amplitudeNEW = calcTempAmplitudeNEW([1, 3, 99], [-1, 3, 66, 88 + 11]);
 // console.log(amplitudeNEW);
+
+// const a = 'mahdi ';
+// first();
+// function first() {
+//   const b = 'hello ';
+//   second();
+
+//   function second() {
+//     const c = 'me ';
+//     third();
+//   }
+//   // console.log(b + a + c + d);
+// }
+// function third() {
+//   const d = 'samadi ';
+//   console.log('mame', b);
+// }
+
+'use strict';
+
+// function calcAge(birthYear) {
+//   const age = 2025 - birthYear;
+
+//   function printAge() {
+//     let output = `${firsName} , you are ${age} , born in ${birthYear}`;
+
+//     const mamal = `your are soo goood ${firsName}`;
+//     if (birthYear > 1990) {
+//       var millenia = true;
+//       const firsName = 'elnaz';
+//       const namana = `namanaaaa ${firsName}`;
+//       const output = 'INEEEEE';
+//       function add(a, b) {
+//         return a + b;
+//       }
+//       console.log(output);
+//       console.log(namana);
+//       console.log(mamal);
+//     }
+//     console.log(output);
+//     // console.log(millenia);
+//     // console.log(add(3, 3));
+//   }
+//   printAge();
+//   return age;
+// }
+
+// const firsName = 'mahdi';
+// calcAge(1995);
+
+// var x = 1;
+// let xy = 2;
+// const xz = 3;
+
+// var firstName = 'mili';
+// const mahid = {
+//   firstName: 'mahdi',
+//   year: 1995,
+//   calcAge: () => {
+//     console.log(this);
+//     console.log(2025 - this.year);
+//   },
+// };
+// console.log(mahid.firstName);
+
+const mahdi = (a, b) => {
+  console.log(arguments);
+  console.log(a + b);
+};
+
+mahdi(2, 5);
+mahdi(2, 4, 11, 13);
