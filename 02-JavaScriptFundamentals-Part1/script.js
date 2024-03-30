@@ -193,10 +193,14 @@
 // };
 // console.log(mahid.firstName);
 
-const mahdi = (a, b) => {
-  console.log(arguments);
-  console.log(a + b);
-};
+// const mahdi = (a, b) => {
+//   console.log(arguments);
+//   console.log(a + b);
+// };
 
-mahdi(2, 5);
-mahdi(2, 4, 11, 13);
+// mahdi(2, 5);
+// mahdi(2, 4, 11, 13);
+
+const arr = [2, 3, 4, 5];
+const [x, y, z] = arr;
+console.log([x, y, z]);
