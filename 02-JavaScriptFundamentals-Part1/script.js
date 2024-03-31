@@ -205,12 +205,106 @@
 // const [x, y, z] = arr;
 // console.log([x, y, z]);
 
-let tepm = ['mahdi', 'elnaz'];
-let [main, second] = tepm;
-console.log(main, second);
-let [samadi, alinezhad] = [main, second];
+// let tepm = ['mahdi', 'elnaz'];
+// let [main, second] = tepm;
+// console.log(main, second);
+// let [samadi, alinezhad] = [main, second];
 
-console.log(samadi, alinezhad);
+// console.log(samadi, alinezhad);
 
-[samadi, alinezhad] = [second, main];
-console.log(samadi, alinezhad);
+// [samadi, alinezhad] = [second, main];
+// console.log(samadi, alinezhad);
+
+'use strict';
+
+// Data needed for a later exercise
+const flights =
+  '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
+
+// Data needed for first part of the section
+const restaurant = {
+  name: 'Classico Italiano',
+  location: 'Via Angelo Tavanti 23, Firenze, Italy',
+  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+  openingHours: {
+    thu: {
+      open: 12,
+      close: 22,
+    },
+    fri: {
+      open: 11,
+      close: 23,
+    },
+    sat: {
+      open: 0, // Open 24 hours
+      close: 24,
+    },
+  },
+
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+
+  orderDelivery: function ({
+    starterIndex = 1,
+    mainIndex = 0,
+    time = '20:20',
+    address,
+  }) {
+    console.log(
+      `order recived : ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} at ${time} to ${address}`
+    );
+  },
+};
+
+// restaurant.orderDelivery({
+//   time: '22:30',
+//   address: 'via del sole, 21',
+//   mainIndex: 2,
+//   starterIndex: 2,
+// });
+// const a = 100;
+// const adj = { a: 22, b: 33, c: 44 };
+// let b = 99;
+// ({ a, b } = adj);
+// console.log(a, b);
+
+//Nested objects
+// const { fri } = restaurant.openingHours;
+// console.log(fri);
+
+// const {
+//   fri: { open: m, close: e },
+// } = restaurant.openingHours;
+// console.log(e, m);
+
+// const { menu = [], starterMenu = [], openingHours = [] } = restaurant;
+// console.log(menu, starterMenu, openingHours);
+
+// const newMenu = [...restaurant.mainMenu];
+// console.log(newMenu);
+
+// const [a, b, ...others] = [1, 2, 3, 4, 5, 6];
+// console.log(a, b, others);
+
+// const add = function (...mahdi) {
+//   console.log(mahdi);
+//   let sum = 0;
+//   for (let i = 0; i < mahdi.length; i++) sum += mahdi[i];
+//   console.log(sum);
+// };
+
+// add(7, 5, 2);
+// // add([3, 5]);
+// const x = [2, 543];
+// add(...x);
+
+// console.log(undefined || '' || null || 0);
+
+// console.log('mahdi' && 9);
+
+// restaurant.azam = null;
+// const guest = restaurant.azam ?? 'madhi';
+// console.log(guest);
