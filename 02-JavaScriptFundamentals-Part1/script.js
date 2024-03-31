@@ -201,6 +201,16 @@
 // mahdi(2, 5);
 // mahdi(2, 4, 11, 13);
 
-const arr = [2, 3, 4, 5];
-const [x, y, z] = arr;
-console.log([x, y, z]);
+// const arr = [2, 3, 4, 5];
+// const [x, y, z] = arr;
+// console.log([x, y, z]);
+
+let tepm = ['mahdi', 'elnaz'];
+let [main, second] = tepm;
+console.log(main, second);
+let [samadi, alinezhad] = [main, second];
+
+console.log(samadi, alinezhad);
+
+[samadi, alinezhad] = [second, main];
+console.log(samadi, alinezhad);
