@@ -39,41 +39,59 @@ const game = {
   },
 };
 
+//CHALLENGED 2
 // 1.
-const [player1, player2] = game.players;
-console.log(player1, player2);
+// for (const [i, player] of game.scored.entries())
+// console.log(`Gol ${i + 1}: ${player}`);
 
 // 2.
-const [gk, ...fieldPlayers] = player1;
-console.log(gk, fieldPlayers);
-
+// const odds = Object.values(game.odds);
+// let average = 0;
+// for (const odd of odds) average += odd;
+// average /= odds.length;
+// console.log(average);
 // 3.
-// const allPlayers = [...player1, ...player2];
-const allPlayers = player1.concat(player2);
-console.log(allPlayers);
+// for (const [i, j] of Object.entries(game.odds)) {
+//   const mahdi = i === 'x' ? `draw` : `victory ${game[i]}`;
+//   console.log(`odd of ${mahdi}: ${j}`);
+// }
 
-// 4.
-const player1Final = [...player1, 'mahdi', 'elnaz', 'ninimon'];
-console.log(player1Final);
+// CHALLENGED 1
+// 1.
+// const [player1, player2] = game.players;
+// console.log(player1, player2);
 
-// 5;
-// const newTeam = game.odds.draw ? 3.25 : (game.odds.draw = 3.25);
-// console.log(newTeam);
+// // 2.
+// const [gk, ...fieldPlayers] = player1;
+// console.log(gk, fieldPlayers);
 
-const {
-  odds: { team1, x: draw, team2 },
-} = game;
-console.log(team1, draw, team2);
+// // 3.
+// // const allPlayers = [...player1, ...player2];
+// const allPlayers = player1.concat(player2);
+// console.log(allPlayers);
 
-// 6.
-const printGoals = function (...players) {
-  console.log(players);
-  console.log(players.length);
-};
+// // 4.
+// const player1Final = [...player1, 'mahdi', 'elnaz', 'ninimon'];
+// console.log(player1Final);
 
-printGoals('mahdi', 'elnaz', 'ninimon');
-printGoals(...game.scored);
+// // 5;
+// // const newTeam = game.odds.draw ? 3.25 : (game.odds.draw = 3.25);
+// // console.log(newTeam);
 
-// 7.
-team1 < team2 && console.log('team1 is more likely to win');
-console.log(team1);
+// const {
+//   odds: { team1, x: draw, team2 },
+// } = game;
+// console.log(team1, draw, team2);
+
+// // 6.
+// const printGoals = function (...players) {
+//   console.log(players);
+//   console.log(players.length);
+// };
+
+// printGoals('mahdi', 'elnaz', 'ninimon');
+// printGoals(...game.scored);
+
+// // 7.
+// team1 < team2 && console.log('team1 is more likely to win');
+// console.log(team1);
