@@ -328,26 +328,26 @@
 // console.log(new Set('azam').size);
 
 // session 9 part 17
-const rest = new Map();
-rest.set('name', 'Mahdi');
-rest.set('name', 'Mahdis');
-rest.set(1, 'samadi', 'Iranian');
-rest.set('categories', ['Italian', 'Pizzeria', 'vegeterian', 'Organic']);
-rest.set('open', 11);
-rest.set('close', 23);
-rest.set(true, 'we are open :D');
-rest.set(false, 'we are close :(');
+// const rest = new Map();
+// rest.set('name', 'Mahdi');
+// rest.set('name', 'Mahdis');
+// rest.set(1, 'samadi', 'Iranian');
+// rest.set('categories', ['Italian', 'Pizzeria', 'vegeterian', 'Organic']);
+// rest.set('open', 11);
+// rest.set('close', 23);
+// rest.set(true, 'we are open :D');
+// rest.set(false, 'we are close :(');
 
-console.log(rest.size);
+// console.log(rest.size);
 
-const task = {
-  task: 'code',
-  code: 'taskam',
-  100: 'to',
-  true: 'mahdi',
-  '': 'samadi',
-};
-console.log(task);
+// const task = {
+//   task: 'code',
+//   code: 'taskam',
+//   100: 'to',
+//   true: 'mahdi',
+//   '': 'samadi',
+// };
+// console.log(task);
 // console.log([...rest]); //SAME  // console.log([...rest.entries()]);
 // console.log([...rest.keys()]);
 // console.log(rest.values());
@@ -386,3 +386,46 @@ console.log(task);
 // }
 // OR ANSWER JONAS
 // console.log(question.get(question.get('correct') === answer));
+
+// const mahdi = 'mah hdi';
+// console.log(mahdi.length);
+// console.log(mahdi.indexOf('h'));
+// console.log(mahdi.lastIndexOf('h'));
+// console.log(mahdi.indexOf('hhdi'));
+// console.log(mahdi.slice(-1));
+// console.log(mahdi.slice(1, 6));
+// console.log(mahdi.slice(mahdi.lastIndexOf(' ') + 1));
+// console.log(typeof new String(4424).slice(1));
+// const family =
+//   'mn khunevadeye khubi daram.ham pedaram va ham madaram baraye mn kheili kara kardan, mn ye khunevadeye 3 nafare daram';
+// console.log(family.replace(/khunevadeye/g, 'family'));
+
+// console.log('a + very + nice + string'.split('+'));
+// const [firstName, lastName] = 'mahdi samadi'.split(' ');
+// console.log(firstName);
+
+// Bozorg kardan harfe aval asamie vorodi
+// const capitalizeName = function (name) {
+//   const names = name.split(' ');
+//   console.log(names);
+//   const namesUpper = [];
+
+//   for (const n of names) {
+//     namesUpper.push(n[0].toUpperCase() + n.slice(1));
+//   }
+//   console.log(namesUpper.join(' '));
+// };
+// console.log(capitalizeName('mahdi samadi elnaz alinezhad'));
+
+// padStart padEnd
+// const message = 'mahdi samadi';
+// console.log(message.padStart(12, '+').padEnd(16, '+'));
+
+// makhfi kardane shomare bjoz 4 raqame akhar
+const maskCreditCard = function (number) {
+  const str = number + '';
+  const last = str.slice(-4);
+  return last.padStart(str.length, '*');
+};
+console.log(maskCreditCard(1234567890));
+console.log(maskCreditCard('9876543210123456789'));
