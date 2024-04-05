@@ -61,6 +61,11 @@ const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
+const displayMovement = function (movements) {
+  movements.forEach(function (mov, i) {});
+};
+displayMovement(account1.movements);
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -70,7 +75,43 @@ const currencies = new Map([
   ['EUR', 'Euro'],
   ['GBP', 'Pound sterling'],
 ]);
+currencies.forEach(function (value, key, map) {
+  console.log(`${key} : ${value} and ${map}`);
+});
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
-
+const mecurrencies = new Set([
+  'mahdi',
+  'mahdi',
+  'enlanz',
+  'azam',
+  'siyamak',
+  'siyamak',
+  1,
+]);
+mecurrencies.forEach(function (value, key, map) {
+  console.log(`${key} : ${value} and ${map}`);
+});
 /////////////////////////////////////////////////
+
+// let arr = ['a', 'b', 'c', 'd', 'e'];
+// console.log(arr.slice(3));
+// console.log(arr.at(-1));
+// console.log(arr[1]);
+// const arr2 = arr.reverse();
+// console.log(arr);
+// console.log(arr2);
+
+// const letters = arr.concat(arr2);
+// console.log(letters);
+// console.log(letters.join('+'));
+// console.log(letters);
+
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// movements.forEach(function (mov, i, arr) {
+//   if (mov > 0) {
+//     console.log(mov);
+//     console.log(`movement ${i + 1}: you deposited ${mov}`);
+//   } else {
+//     console.log(`movement ${i + 1}: you withdrew ${Math.abs(mov)}`);
+//   }
+// });
