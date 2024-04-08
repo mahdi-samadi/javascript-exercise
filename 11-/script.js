@@ -62,35 +62,58 @@ const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
 const displayMovement = function (movements) {
-  movements.forEach(function (mov, i) {});
+  containerMovements.innerHTML = '';
+  movements.forEach(function (mov, i) {
+    const type = mov > 0 ? 'deposit' : 'withdrawal';
+    const html = `
+      <div class="movements__row">
+        <div class="movements__type movements__type--${type}">${
+      i + 1
+    } ${type}</div>
+        <div class="movements__value">${mov}</div>
+      </div>`;
+    containerMovements.insertAdjacentHTML('afterbegin', html);
+  });
 };
 displayMovement(account1.movements);
+
+const creatUserName = function (accs) {
+  accs.forEach(function (acc) {
+    acc.username = acc.owner
+      .toLowerCase()
+      .split(' ')
+      .map(name => name[0])
+      .join('');
+  });
+};
+creatUserName(accounts);
+console.log(accounts);
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
 
-const currencies = new Map([
-  ['USD', 'United States dollar'],
-  ['EUR', 'Euro'],
-  ['GBP', 'Pound sterling'],
-]);
-currencies.forEach(function (value, key, map) {
-  console.log(`${key} : ${value} and ${map}`);
-});
+// const currencies = new Map([
+//   ['USD', 'United States dollar'],
+//   ['EUR', 'Euro'],
+//   ['GBP', 'Pound sterling'],
+// ]);
+// currencies.forEach(function (value, key, map) {
+//   console.log(`${key} : ${value} and ${map}`);
+// });
 
-const mecurrencies = new Set([
-  'mahdi',
-  'mahdi',
-  'enlanz',
-  'azam',
-  'siyamak',
-  'siyamak',
-  1,
-]);
-mecurrencies.forEach(function (value, key, map) {
-  console.log(`${key} : ${value} and ${map}`);
-});
+// const mecurrencies = new Set([
+//   'mahdi',
+//   'mahdi',
+//   'enlanz',
+//   'azam',
+//   'siyamak',
+//   'siyamak',
+//   1,
+// ]);
+// mecurrencies.forEach(function (value, key, map) {
+//   console.log(`${key} : ${value} and ${map}`);
+// });
 /////////////////////////////////////////////////
 
 // let arr = ['a', 'b', 'c', 'd', 'e'];
@@ -106,12 +129,31 @@ mecurrencies.forEach(function (value, key, map) {
 // console.log(letters.join('+'));
 // console.log(letters);
 
-// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
-// movements.forEach(function (mov, i, arr) {
-//   if (mov > 0) {
-//     console.log(mov);
-//     console.log(`movement ${i + 1}: you deposited ${mov}`);
-//   } else {
-//     console.log(`movement ${i + 1}: you withdrew ${Math.abs(mov)}`);
-//   }
-// });
+// CODING CHALLENGED
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+const deposits = movements.filter(mov => mov > 0);
+console.log(deposits);
+
+const withdrawals = movements.filter(mov => mov < 0);
+console.log(withdrawals)
+// const eurToUsd = 1.1;
+// const movementsUsd = movements.map(mov => mov * eurToUsd);
+
+// console.log(movements);
+// console.log(movementsUsd);
+
+// const movementsDescriptions = movements.map(
+//   (mov, i , arr) =>
+//   `movement ${ i + 1 } : you ${(mov > 0) ? 'deposit' : 'withdrawal'} ${Math.abs(mov)}`);
+// console.log(movementsDescriptions);
+
+// const user = 'MAHDI SAMADI';
+// const username = user
+//   .toLowerCase()
+//   .split(' ')
+//   .map(function (name) {
+//     return name[0];
+//   })
+//   .join('');
+// console.log(username);
