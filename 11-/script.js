@@ -21,7 +21,7 @@ const account2 = {
 
 const account3 = {
   owner: 'Steven Thomas Williams',
-  movements: [200, -200, 340, -300, -20, 50, 400, -460],
+  movements: [-200, -200, -340, -300, -20, -50, -400, -460],
   interestRate: 0.7,
   pin: 3333,
 };
@@ -76,33 +76,31 @@ const displayMovement = function (movements) {
   });
 };
 
-displayMovement(account1.movements);
-
-const calcDisplayBalance = function (movements) {
+const calcDisplayBalance = function (acc) {
   // console.log(movements);
-  const balance = movements.reduce((acc, mov) => acc + mov, 0);
-  labelBalance.textContent = `${balance} €`;
+  acc.balance = acc.movements.reduce((acc, mov) => acc + mov, 0);
+  labelBalance.textContent = `${acc.balance} €`;
+  console.log(acc.balance);
 };
-calcDisplayBalance(account1.movements);
 
-const calcDisplaySummary = function (movements) {
-  const incomes = movements
+const calcDisplaySummary = function (acc) {
+  const incomes = acc.movements
     .filter(mov => mov > 0)
     .reduce((acc, mov) => acc + mov, 0);
   labelSumIn.textContent = `${incomes} €`;
 
-  const out = movements.filter(mov => mov < 0).reduce((acc, mov) => acc + mov);
+  const out = acc.movements
+    .filter(mov => mov < 0)
+    .reduce((acc, mov) => acc + mov);
   labelSumOut.textContent = `${Math.abs(out)} €`;
 
-  const interest = movements
+  const interest = acc.movements
     .filter(mov => mov > 0)
-    .map(deposit => (deposit * 1.2) / 100)
+    .map(deposit => (deposit * acc.interestRate) / 100)
     .reduce((acc, int) => acc + int, 0);
   console.log(interest);
   labelSumInterest.textContent = `${interest} €`;
 };
-
-calcDisplaySummary(account1.movements);
 
 const creatUserName = function (accs) {
   accs.forEach(function (acc) {
@@ -114,8 +112,58 @@ const creatUserName = function (accs) {
   });
 };
 creatUserName(accounts);
-console.log(accounts);
+// console.log(accounts);
+const updateUI = function (acc) {
+  // display movements
+  displayMovement(acc.movements);
+  // display balanec
+  calcDisplayBalance(acc);
+  // display summary
+  calcDisplaySummary(acc);
+};
+// EVENT Handler
+let currentAccount;
 
+btnLogin.addEventListener('click', function (e) {
+  // Prevent form from submitting
+  e.preventDefault();
+
+  currentAccount = accounts.find(
+    acc => acc.username === inputLoginUsername.value
+  );
+  console.log(currentAccount);
+  if (currentAccount?.pin === Number(inputLoginPin.value)) {
+    console.log('login');
+  }
+  // display UI and message
+  labelWelcome.textContent = `Welcom back, ${
+    currentAccount.owner.split(' ')[0]
+  }`;
+  inputLoginPin.blur();
+  containerApp.style.opacity = 100;
+  // clear fields:
+  inputLoginUsername.value = inputLoginPin.value = '';
+
+  updateUI(currentAccount);
+});
+
+btnTransfer.addEventListener('click', function (e) {
+  e.preventDefault();
+  const amount = Number(inputTransferAmount.value);
+  const receiverAcc = accounts.find(
+    acc => acc.username === inputTransferTo.value
+  );
+  inputTransferAmount.value = inputTransferTo.value = '';
+  console.log(amount, receiverAcc);
+  if (
+    amount > 0 &&
+    currentAccount.balance >= amount &&
+    receiverAcc?.username !== currentAccount.username
+  ) {
+    currentAccount.movements.push(-amount);
+    receiverAcc.movements.push(amount);
+  }
+});
 /////////////////////////////////////////////
 /////////////////////////////////////////////
 // LECTURES
