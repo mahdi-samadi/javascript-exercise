@@ -21,7 +21,7 @@ const account2 = {
 
 const account3 = {
   owner: 'Steven Thomas Williams',
-  movements: [-200, -200, -340, -300, -20, -50, -400, -460],
+  movements: [-200, -200, -340, -300, -20, -50, -400, -460, 10],
   interestRate: 0.7,
   pin: 3333,
 };
@@ -175,14 +175,27 @@ btnTransfer.addEventListener('click', function (e) {
   }
 });
 
+btnLoan.addEventListener('click', function(e) {
+  e.preventDefault();
+
+  const amount = Number(inputLoanAmount.value)
+
+  if(amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)) {
+    // add movement
+    currentAccount.movements.push(amount);
+    // update UI
+    updateUI(currentAccount);
+  }
+  inputLoanAmount.value= '';
+})
+
 btnClose.addEventListener('click', function (e) {
   e.preventDefault();
   
   if(inputCloseUsername.value === currentAccount.username && Number(inputClosePin.value) === currentAccount.pin) {
     const index = accounts.findIndex(acc => acc.username === currentAccount.username);
     // delete account
-    // console.log(index);
-    accounts.splice(index, 1)
+    const me = accounts.splice(index, 1)
     // hide UI
     containerApp.style.opacity = 0;
   }
