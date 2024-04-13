@@ -134,17 +134,18 @@ btnLogin.addEventListener('click', function (e) {
   console.log(currentAccount);
   if (currentAccount?.pin === Number(inputLoginPin.value)) {
     console.log('login');
-  }
-  // display UI and message
-  labelWelcome.textContent = `Welcom back, ${
-    currentAccount.owner.split(' ')[0]
-  }`;
-  inputLoginPin.blur();
-  containerApp.style.opacity = 100;
+    // display UI and message
+    labelWelcome.textContent = `Welcom back, ${currentAccount.owner.split(' ')[0]}`;
+    inputLoginPin.blur();
+    containerApp.style.opacity = 100;
+
+    // display movements
+    displayMovement(currentAccount.movements)
   // clear fields:
   inputLoginUsername.value = inputLoginPin.value = '';
 
   updateUI(currentAccount);
+  }
 });
 
 btnTransfer.addEventListener('click', function (e) {
@@ -160,6 +161,12 @@ btnTransfer.addEventListener('click', function (e) {
     currentAccount.balance >= amount &&
     receiverAcc?.username !== currentAccount.username
   ) {
+
+    // Delete account
+    accounts.splice(index, 1);
+
+    // hide UI
+    containerApp.style.opacity = 0;
     currentAccount.movements.push(-amount);
     receiverAcc.movements.push(amount);
   }
