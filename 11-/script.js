@@ -305,6 +305,8 @@ btnSort.addEventListener('click', function(e) {
 // const z = Array.from({length: 7} , (cur,i) => i+5);
 // console.log(z);
 
+// const z = Array.from({length: 7} , (cur,i) => i+5);
+// console.log(z);
 
 // var numbers = [200, 450, -400, 3000, -650, -130, 70, 1300]
 // var sum = numbers.reduce((acc, cur, index) => (cur >= 1000 ? ++acc : acc),10);
@@ -326,6 +328,8 @@ btnSort.addEventListener('click', function(e) {
 // const dogSarah = dogs.find(dog => dog.owners.includes('Sarah'));
 // console.log(dogSarah);
 
+// const ownerTooMuch = dogs.filter(dog => (dog.curFood > dog.recFood)).flatMap(dog => dog.owners)
+// console.log(ownerTooMuch);
 
 // const ownerTooMuch = dogs.filter(dog => (dog.curFood > dog.recFood)).flatMap(dog => dog.owners)
 // console.log(ownerTooMuch);
